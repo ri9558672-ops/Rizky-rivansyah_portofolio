@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portofolio Rizky Rivansyah — Mahasiswa Ilmu Komputer, kreator digital, dan pengembang ide kreatif.">
+<title>Rizky Rivansyah | Personal Portfolio</title>
+<style>
+:root{--bg:#080d18;--panel:#101a2c;--text:#f4f7ff;--muted:#a7b3c9;--blue:#58a6ff;--cyan:#62e6e0;--line:rgba(255,255,255,.11)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 80% 0%,#142b4b 0,transparent 34%),var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.container{width:min(1100px,92%);margin:auto}
+nav{position:sticky;top:0;z-index:10;background:rgba(8,13,24,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:850;letter-spacing:.08em;font-size:1.15rem}.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:26px;color:var(--muted);font-size:.92rem}.nav-links a:hover{color:var(--cyan)}
+.menu{display:none;background:none;color:white;border:1px solid var(--line);border-radius:10px;padding:7px 10px;font-size:1.1rem}
+.hero{min-height:82vh;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:50px;padding:80px 0 95px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:.83rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}
+h1{font-size:clamp(3rem,7vw,5.8rem);line-height:1.02;letter-spacing:-.055em;margin:20px 0}
+.gradient{background:linear-gradient(100deg,var(--blue),var(--cyan));color:transparent;background-clip:text}
+.hero p{max-width:610px;color:var(--muted);font-size:1.08rem}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:12px;font-weight:750;border:1px solid var(--line);transition:.2s}
+.btn.primary{background:linear-gradient(100deg,#3988f5,#40cfc9);color:#07111f;border:0}.btn:hover{transform:translateY(-3px)}
+.profile-card{position:relative;padding:28px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(25,43,70,.9),rgba(13,22,38,.85));box-shadow:0 24px 80px rgba(0,0,0,.25);overflow:hidden}
+.profile-card:before{content:"";position:absolute;width:220px;height:220px;background:var(--blue);filter:blur(110px);opacity:.18;right:-60px;top:-70px}
+.avatar{width:100%;aspect-ratio:1/1;border-radius:22px;background:linear-gradient(135deg,#1b3a61,#142033 60%,#1b6c78);display:grid;place-items:center;border:1px solid rgba(255,255,255,.12);position:relative;overflow:hidden}
+.avatar .initials{font-size:6rem;font-weight:900;letter-spacing:-.08em;color:#e9f8ff;text-shadow:0 0 45px #58a6ff}
+.avatar .orb{position:absolute;width:180px;height:180px;border:1px solid rgba(98,230,224,.4);border-radius:50%;transform:translate(45px,35px)}
+.card-bottom{display:flex;justify-content:space-between;gap:10px;margin-top:19px}.card-bottom strong{display:block}.card-bottom small{color:var(--muted)}
+.status{align-self:center;border:1px solid rgba(98,230,224,.3);background:rgba(98,230,224,.08);color:var(--cyan);padding:6px 10px;border-radius:99px;font-size:.75rem;white-space:nowrap}
+section{padding:78px 0;scroll-margin-top:72px}
+.section-head{margin-bottom:30px}.kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.15em;font-size:.78rem;font-weight:800}
+h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;line-height:1.15;margin-top:8px}
+.section-desc{color:var(--muted);max-width:650px;margin-top:12px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:rgba(16,26,44,.78);border:1px solid var(--line);border-radius:20px;padding:26px}
+.panel p{color:var(--muted)}.facts{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+.fact{padding:15px;border-radius:14px;background:rgba(255,255,255,.035)}.fact strong{display:block;font-size:1.05rem}.fact span{font-size:.85rem;color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.chip{padding:8px 12px;border-radius:10px;background:#15253c;border:1px solid var(--line);color:#dce9ff;font-size:.9rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,rgba(20,34,56,.92),rgba(11,18,31,.92));min-height:250px;display:flex;flex-direction:column}
+.project-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(88,166,255,.13);font-size:1.4rem;margin-bottom:20px}
+.project h3{font-size:1.15rem;margin-bottom:9px}.project p{color:var(--muted);font-size:.93rem}.project .tag{margin-top:auto;padding-top:22px;color:var(--cyan);font-size:.8rem;font-weight:700}
+.timeline{border-left:1px solid #2d496b;padding-left:24px;display:grid;gap:22px}.timeline-item{position:relative}.timeline-item:before{content:"";position:absolute;left:-30px;top:8px;width:11px;height:11px;background:var(--cyan);border-radius:50%;box-shadow:0 0 0 5px rgba(98,230,224,.1)}
+.timeline-item h3{font-size:1.05rem}.timeline-item p{color:var(--muted);margin-top:5px}
+.contact-box{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:35px;border-radius:24px;background:linear-gradient(110deg,rgba(37,94,156,.35),rgba(36,135,133,.18));border:1px solid rgba(98,230,224,.22)}
+.contact-box p{color:var(--muted);margin-top:8px;max-width:550px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.86rem}.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{animation:rise .7s ease both}@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:35px;padding-top:60px;min-height:auto}.profile-card{max-width:430px}.cards{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr}.contact-box{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.nav-links{display:none;position:absolute;top:71px;left:0;right:0;padding:20px 4%;background:#0b1322;border-bottom:1px solid var(--line);flex-direction:column;gap:14px}.nav-links.open{display:flex}.menu{display:block}.cards{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}section{padding:58px 0}.contact-box{padding:25px}.hero p{font-size:1rem}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">RIZKY<span>.</span></a>
+    <button class="menu" id="menuBtn" aria-label="Buka menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">Tentang</a><a href="#skills">Keahlian</a><a href="#projects">Proyek</a><a href="#journey">Perjalanan</a><a href="#contact">Kontak</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <header class="container hero" id="home">
+    <div class="reveal">
+      <div class="eyebrow"><span class="dot"></span> Mahasiswa Ilmu Komputer · Digital Creative</div>
+      <h1>Halo, saya<br><span class="gradient">Rizky Rivansyah.</span></h1>
+      <p>Saya tertarik pada teknologi, kreativitas digital, pengembangan konten, dan dunia gaming. Saya senang mengubah ide menjadi karya digital yang menarik dan bermanfaat.</p>
+      <div class="actions"><a class="btn primary" href="#projects">Lihat Proyek <span aria-hidden="true">↗</span></a><a class="btn" href="#contact">Hubungi Saya</a></div>
+    </div>
+    <aside class="profile-card reveal" aria-label="Kartu profil">
+      <div class="avatar"><div class="orb"></div><div class="initials">RI</div></div>
+      <div class="card-bottom"><div><strong>Rizky Rivansyah</strong><small>Computer Science Student</small></div><span class="status">● Open to ideas</span></div>
+    </aside>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head"><div class="kicker">01 / Tentang Saya</div><h2>Menggabungkan teknologi<br>dan kreativitas.</h2><p class="section-desc">Saya adalah mahasiswa Ilmu Komputer yang terus belajar mengembangkan kemampuan di bidang teknologi informasi, desain digital, dan pembuatan konten.</p></div>
+      <div class="about-grid">
+        <div class="panel"><h3>Profil Singkat</h3><p style="margin-top:12px">Bagi saya, teknologi bukan hanya tentang kode, tetapi juga tentang bagaimana menciptakan solusi, menyampaikan ide, dan membangun pengalaman digital yang menarik. Saya terbuka untuk kolaborasi, belajar hal baru, serta terlibat dalam kegiatan kreatif dan organisasi.</p></div>
+        <div class="panel"><h3>Fokus Saya</h3><div class="facts"><div class="fact"><strong>Teknologi</strong><span>Pemrograman & data</span></div><div class="fact"><strong>Kreatif</strong><span>Desain & konten</span></div><div class="fact"><strong>Gaming</strong><span>Mobile Legends & esports</span></div><div class="fact"><strong>Kolaborasi</strong><span>Organisasi & tim</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-head"><div class="kicker">02 / Keahlian</div><h2>Hal yang sedang saya kembangkan.</h2><p class="section-desc">Bagian ini bisa kamu sesuaikan dengan kemampuan yang paling kamu kuasai dan pengalaman yang sudah kamu miliki.</p></div>
+      <div class="panel">
+        <h3>Teknologi & Data</h3><div class="skills"><span class="chip">Python Dasar</span><span class="chip">OOP</span><span class="chip">Web Scraping</span><span class="chip">Data Analysis</span><span class="chip">Machine Learning Dasar</span></div>
+        <h3 style="margin-top:25px">Kreativitas Digital</h3><div class="skills"><span class="chip">Canva</span><span class="chip">Desain Poster</span><span class="chip">Video Editing</span><span class="chip">Content Creation</span><span class="chip">Personal Branding</span></div>
+        <h3 style="margin-top:25px">Soft Skills</h3><div class="skills"><span class="chip">Kerja Tim</span><span class="chip">Komunikasi</span><span class="chip">Public Speaking</span><span class="chip">Manajemen Waktu</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head"><div class="kicker">03 / Proyek Pilihan</div><h2>Karya dan eksplorasi saya.</h2><p class="section-desc">Contoh proyek yang relevan dengan minatmu. Ganti deskripsi dan tautan dengan hasil proyek asli saat sudah siap dipublikasikan.</p></div>
+      <div class="cards">
+        <article class="project"><div class="project-icon">🎮</div><h3>Konten Gaming Mobile Legends</h3><p>Eksplorasi pembuatan konten gaming, identitas kreator, ide video, dan visual untuk membangun audiens di media sosial.</p><div class="tag">CONTENT CREATION</div></article>
+        <article class="project"><div class="project-icon">🎨</div><h3>Desain Promosi & Turnamen</h3><p>Konsep desain flyer untuk kegiatan gaming dan organisasi mahasiswa dengan informasi acara yang jelas dan visual yang menarik.</p><div class="tag">DIGITAL DESIGN</div></article>
+        <article class="project"><div class="project-icon">💻</div><h3>Eksplorasi Python & Data</h3><p>Latihan pemrograman, web scraping, analisis data, serta visualisasi sebagai bagian dari pembelajaran Ilmu Komputer.</p><div class="tag">TECHNOLOGY</div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey">
+    <div class="container">
+      <div class="section-head"><div class="kicker">04 / Perjalanan</div><h2>Terus belajar, terus bertumbuh.</h2></div>
+      <div class="panel"><div class="timeline">
+        <div class="timeline-item"><h3>Mahasiswa Ilmu Komputer</h3><p>Mempelajari dasar pemrograman, sistem informasi, pengolahan data, dan teknologi digital.</p></div>
+        <div class="timeline-item"><h3>Eksplorasi Digital Creative</h3><p>Mengembangkan ide konten, personal branding, desain visual, dan strategi media sosial.</p></div>
+        <div class="timeline-item"><h3>Aktivitas Organisasi & Kolaborasi</h3><p>Mengasah kerja sama tim, komunikasi, dan kemampuan merancang kegiatan bersama.</p></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box"><div><div class="kicker">05 / Kontak</div><h2>Mari terhubung!</h2><p>Punya ide proyek, ingin berkolaborasi, atau sekadar ingin berdiskusi tentang teknologi dan konten digital? Saya terbuka untuk terhubung.</p></div><div class="actions"><a class="btn primary" href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a><a class="btn" href="https://www.tiktok.com/" target="_blank" rel="noreferrer">TikTok ↗</a></div></div>
+    </div>
+  </section>
+</main>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> Rizky Rivansyah. Dibuat dengan semangat kreatif.</span><a href="#home">Kembali ke atas ↑</a></div></footer>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
